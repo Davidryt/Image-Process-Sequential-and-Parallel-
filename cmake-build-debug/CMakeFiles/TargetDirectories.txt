@@ -1,0 +1,3 @@
+/home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles/Arqui2020.dir

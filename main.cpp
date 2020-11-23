@@ -1,6 +1,8 @@
 #include <iostream>
 #include <chrono>
 #include <dirent.h> //opendir
+#include <string.h>
+#include <stdio.h>
 
 using namespace std;
     
