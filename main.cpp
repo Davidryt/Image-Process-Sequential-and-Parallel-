@@ -3,8 +3,12 @@
 #include <dirent.h> //opendir
 #include <string.h>
 #include <stdio.h>
+#include <vector>
+#include "bmp.h"
 
-using namespace std;
+
+
+    using namespace std;
     
     string checkPathString(string operation ,string in_path, string out_path);
     void listdir(string initStrPath);
@@ -66,5 +70,16 @@ int main(int argc, char *argv[]){
         }
     }
     */
+
+    cout << "bmp part start\n";
+
+    BMP prueba("../inimg/test24.bmp");
+    prueba.write("test24_copy.bmp");
+    //BMP prueba_falla ("../inimg/test.bmp");
+    //prueba_falla.write("Shapes_copy.bmp");
+
+    cout << "bmp part end\n";
+
+
     return 0;
 }

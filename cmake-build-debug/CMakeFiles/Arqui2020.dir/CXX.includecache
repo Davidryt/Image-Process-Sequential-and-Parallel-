@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/davidryt/Desktop/Arqui2020/bmp.h
+fstream
+-
+vector
+-
+stdexcept
+-
+iostream
+-
+
 /home/davidryt/Desktop/Arqui2020/main.cpp
 iostream
 -
@@ -17,4 +27,8 @@ string.h
 -
 stdio.h
 -
+vector
+-
+bmp.h
+/home/davidryt/Desktop/Arqui2020/bmp.h
 

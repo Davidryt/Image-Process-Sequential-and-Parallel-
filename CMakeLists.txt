@@ -4,4 +4,4 @@ project(Arqui2020)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Arqui2020
-        main.cpp)
+        main.cpp bmp.h)
