@@ -73,8 +73,8 @@ int main(int argc, char *argv[]){
 
     cout << "bmp part start\n";
 
-    BMP prueba("../inimg/test24.bmp");
-    prueba.write("test24_copy.bmp");
+    BMP prueba("../inimg/t1_24.bmp");
+    prueba.write("copy.bmp");
     //BMP prueba_falla ("../inimg/test.bmp");
     //prueba_falla.write("Shapes_copy.bmp");
 
