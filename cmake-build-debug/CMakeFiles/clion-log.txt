@@ -1,4 +1,4 @@
-/home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/davidryt/Desktop/Arqui2020
+/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/rober/uni/arch/Arqui2020
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/davidryt/Desktop/Arqui2020/cmake-build-debug
+-- Build files have been written to: /home/rober/uni/arch/Arqui2020/cmake-build-debug

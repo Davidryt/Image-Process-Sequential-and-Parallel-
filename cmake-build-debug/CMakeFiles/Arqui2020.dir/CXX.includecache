@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/davidryt/Desktop/Arqui2020/bmp.h
+/home/rober/uni/arch/Arqui2020/bmp.h
 fstream
 -
 vector
@@ -16,7 +16,7 @@ stdexcept
 iostream
 -
 
-/home/davidryt/Desktop/Arqui2020/main.cpp
+/home/rober/uni/arch/Arqui2020/main.cpp
 iostream
 -
 chrono
@@ -30,5 +30,7 @@ stdio.h
 vector
 -
 bmp.h
-/home/davidryt/Desktop/Arqui2020/bmp.h
+/home/rober/uni/arch/Arqui2020/bmp.h
+cstring
+-
 
