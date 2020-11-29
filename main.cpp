@@ -56,11 +56,12 @@ void listdir(string in_path, string out_path) {
     }
 }
 
-int main(int argc, char *argv[]) {
-
-    if (argc <= 3) {
+// Check whether args are acceptable
+bool check_args(int argc, char *argv[]) {
+    if (argc != 4) {
         cout << "Wrong format:" << endl;
-        cout << argv[0] << " <operation, in_path, out_path>";
+        cout << argv[0] << " <operation, in_path, out_path>" << endl;
+        return false;
     }
     if (argv[1] == string("gauss") || argv[1] == string("copy") || argv[1] == string("sobel")) {
         DIR *dirp1;
@@ -83,7 +84,7 @@ int main(int argc, char *argv[]) {
             listdir(argv[2], argv[3]);
 
         } else {
-            return 0; // if one of the directories are not able to open /don´t exist, the program will finish
+            return false; // if one of the directories are not able to open /don´t exist, the program will finish
         }
     } else {
         cerr << "Unexpected operation: " << argv[1] << endl; //in case wrong option, we have an standard error
@@ -115,9 +116,14 @@ int main(int argc, char *argv[]) {
         if (correct1 == true && correct2 == true) {
             listdir(argv[2], argv[3]);
         } else {
-            return 0; // if one of the directories are not able to open /don´t exist, the program will finish
+            return false; // if one of the directories are not able to open /don´t exist, the program will finish
         }
     }
+    return true;
+}
+
+int main(int argc, char *argv[]) {
+    if(!check_args(argc, argv)) return 1;
 
     cout << "bmp part start\n";
 
