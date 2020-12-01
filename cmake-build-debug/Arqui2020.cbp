@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/rober/uni/arch/Arqui2020/bmp.cpp">
+			<Option target="Arqui2020"/>
+		</Unit>
 		<Unit filename="/home/rober/uni/arch/Arqui2020/bmp.h">
 			<Option target="Arqui2020"/>
 		</Unit>

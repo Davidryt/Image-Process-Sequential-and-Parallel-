@@ -143,6 +143,33 @@ Arqui2020/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/build
 .PHONY : Arqui2020/fast
 
+bmp.o: bmp.cpp.o
+
+.PHONY : bmp.o
+
+# target to build an object file
+bmp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.o
+.PHONY : bmp.cpp.o
+
+bmp.i: bmp.cpp.i
+
+.PHONY : bmp.i
+
+# target to preprocess a source file
+bmp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.i
+.PHONY : bmp.cpp.i
+
+bmp.s: bmp.cpp.s
+
+.PHONY : bmp.s
+
+# target to generate assembly for a file
+bmp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.s
+.PHONY : bmp.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Arqui2020"
+	@echo "... bmp.o"
+	@echo "... bmp.i"
+	@echo "... bmp.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

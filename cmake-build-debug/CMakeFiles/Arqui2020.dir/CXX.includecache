@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/rober/uni/arch/Arqui2020/bmp.cpp
+bmp.h
+/home/rober/uni/arch/Arqui2020/bmp.h
+
 /home/rober/uni/arch/Arqui2020/bmp.h
 fstream
 -

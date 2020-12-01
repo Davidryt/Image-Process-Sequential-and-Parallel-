@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "Arqui2020"
   "Arqui2020.pdb"
+  "CMakeFiles/Arqui2020.dir/bmp.cpp.o"
   "CMakeFiles/Arqui2020.dir/main.cpp.o"
 )
 
