@@ -123,8 +123,20 @@ bool check_args(int argc, char *argv[]) {
 }
 
 int main(int argc, char *argv[]) {
-    if(!check_args(argc, argv)) return 1;
+    if(!check_args(argc, argv)) return 1;   // End program with error 1 if check wasn't successful
 
+    string option {argv[1]};
+    if(option.compare("copy")) {
+
+    } else if(option.compare("gauss")) {
+
+    } else if(option.compare("sobel")) {
+
+    } else {
+        throw std::runtime_error("Error: unexpected operation");
+    }
+
+    // TODO: remove tests
     cout << "bmp part start\n";
 
     BMP prueba("../inimg/t1_24.bmp");
