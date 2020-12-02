@@ -2,7 +2,9 @@
 // Created by rober on 1/12/20.
 //
 
-#include "bmp.h"
+#include <bmp.h>
+#include <dirent.h>
+#include <cstring>
 
 void BMP::read(const char *fname) {
     //first of all we need to setup the file reader

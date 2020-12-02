@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rober/uni/arch/Arqui2020/bmp.cpp" "/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/Arqui2020.dir/bmp.cpp.o"
   "/home/rober/uni/arch/Arqui2020/main.cpp" "/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/Arqui2020.dir/main.cpp.o"
+  "/home/rober/uni/arch/Arqui2020/test/test-bmp.cpp" "/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -76,6 +76,30 @@ CMAKE_BINARY_DIR = /home/rober/uni/arch/Arqui2020/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -97,6 +121,28 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,71 +177,136 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Arqui2020
+# Target rules for targets named test-bmp
 
 # Build rule for target.
-Arqui2020: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Arqui2020
-.PHONY : Arqui2020
+test-bmp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-bmp
+.PHONY : test-bmp
 
 # fast build rule for target.
-Arqui2020/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/build
-.PHONY : Arqui2020/fast
+test-bmp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/build
+.PHONY : test-bmp/fast
 
-bmp.o: bmp.cpp.o
+#=============================================================================
+# Target rules for targets named Arqui2020_tst
 
-.PHONY : bmp.o
+# Build rule for target.
+Arqui2020_tst: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Arqui2020_tst
+.PHONY : Arqui2020_tst
+
+# fast build rule for target.
+Arqui2020_tst/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Arqui2020_tst.dir/build.make test/CMakeFiles/Arqui2020_tst.dir/build
+.PHONY : Arqui2020_tst/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+src/bmp.o: src/bmp.cpp.o
+
+.PHONY : src/bmp.o
 
 # target to build an object file
-bmp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.o
-.PHONY : bmp.cpp.o
+src/bmp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/src/bmp.cpp.o
+.PHONY : src/bmp.cpp.o
 
-bmp.i: bmp.cpp.i
+src/bmp.i: src/bmp.cpp.i
 
-.PHONY : bmp.i
+.PHONY : src/bmp.i
 
 # target to preprocess a source file
-bmp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.i
-.PHONY : bmp.cpp.i
+src/bmp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/src/bmp.cpp.i
+.PHONY : src/bmp.cpp.i
 
-bmp.s: bmp.cpp.s
+src/bmp.s: src/bmp.cpp.s
 
-.PHONY : bmp.s
+.PHONY : src/bmp.s
 
 # target to generate assembly for a file
-bmp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.s
-.PHONY : bmp.cpp.s
+src/bmp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/src/bmp.cpp.s
+.PHONY : src/bmp.cpp.s
 
-main.o: main.cpp.o
+test/test-bmp.o: test/test-bmp.cpp.o
 
-.PHONY : main.o
+.PHONY : test/test-bmp.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/main.cpp.o
-.PHONY : main.cpp.o
+test/test-bmp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/test/test-bmp.cpp.o
+.PHONY : test/test-bmp.cpp.o
 
-main.i: main.cpp.i
+test/test-bmp.i: test/test-bmp.cpp.i
 
-.PHONY : main.i
+.PHONY : test/test-bmp.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/main.cpp.i
-.PHONY : main.cpp.i
+test/test-bmp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/test/test-bmp.cpp.i
+.PHONY : test/test-bmp.cpp.i
 
-main.s: main.cpp.s
+test/test-bmp.s: test/test-bmp.cpp.s
 
-.PHONY : main.s
+.PHONY : test/test-bmp.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/main.cpp.s
-.PHONY : main.cpp.s
+test/test-bmp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/test/test-bmp.cpp.s
+.PHONY : test/test-bmp.cpp.s
 
 # Help Target
 help:
@@ -204,14 +315,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Arqui2020"
-	@echo "... bmp.o"
-	@echo "... bmp.i"
-	@echo "... bmp.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Arqui2020_tst"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... test-bmp"
+	@echo "... src/bmp.o"
+	@echo "... src/bmp.i"
+	@echo "... src/bmp.s"
+	@echo "... test/test-bmp.o"
+	@echo "... test/test-bmp.i"
+	@echo "... test/test-bmp.s"
 .PHONY : help
 
 
