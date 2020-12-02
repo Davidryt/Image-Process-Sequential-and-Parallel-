@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidryt/Desktop/Arqui2020
+CMAKE_SOURCE_DIR = /home/rober/uni/arch/Arqui2020
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidryt/Desktop/Arqui2020/cmake-build-debug
+CMAKE_BINARY_DIR = /home/rober/uni/arch/Arqui2020/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/davidryt/Desktop/Arqui2020/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -90,7 +90,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -100,9 +100,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles /home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -143,6 +143,33 @@ Arqui2020/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/build
 .PHONY : Arqui2020/fast
 
+bmp.o: bmp.cpp.o
+
+.PHONY : bmp.o
+
+# target to build an object file
+bmp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.o
+.PHONY : bmp.cpp.o
+
+bmp.i: bmp.cpp.i
+
+.PHONY : bmp.i
+
+# target to preprocess a source file
+bmp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.i
+.PHONY : bmp.cpp.i
+
+bmp.s: bmp.cpp.s
+
+.PHONY : bmp.s
+
+# target to generate assembly for a file
+bmp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/bmp.cpp.s
+.PHONY : bmp.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Arqui2020"
+	@echo "... bmp.o"
+	@echo "... bmp.i"
+	@echo "... bmp.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
