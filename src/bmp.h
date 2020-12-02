@@ -43,6 +43,10 @@ struct BMP {
     img_header bmp_info_header;
     std::vector<uint8_t> data;
 
+    std::vector<std::vector<int>> red;
+    std::vector<std::vector<int>> green;
+    std::vector<std::vector<int>>  blue;
+
     BMP(const char *fname) {
         read(fname);
     }
@@ -52,6 +56,13 @@ struct BMP {
 
     int get_pixel();
     int set_pixel();
+
+    void gaussBlur();
+    int getWidth() {return bmp_info_header.img_width;}
+    int getHeight() {return bmp_info_header.img_height;}
+
+    void getRGB();
+    void setRGB();
 
 private:
     uint32_t row_stride{ 0 };

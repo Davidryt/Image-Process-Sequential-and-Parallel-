@@ -83,3 +83,66 @@ int BMP::get_pixel() {
 int BMP::set_pixel() {
     return 0;
 }
+void BMP::gaussBlur()
+{
+    int m[5][5]  {{1,4,7,4,1},
+                  {4,16,26,16,4},
+                  {7,26,41,26,7},
+                  {4,16,26,16,4},
+                  {1,4,7,4,1}};
+    int w {273};
+    for(int i = 0; i<getHeight();i++)
+    {
+        for(int j = 0; j<getWidth(); j++)
+        {
+            int new_blue {0};
+            int new_green {0};
+            int new_red {0};
+            for (int s = -2; s<=2; s++)
+            {
+                for(int t = -2; t<=2; t++)
+                {
+                    if((i+s)>=0 and (j+t)>=0 and (i+s)<getHeight() and (j+t)<getWidth()) {
+                        new_blue += m[s + 2][t + 2] * blue[i + s][j + t];
+                        new_green += m[s + 2][t + 2] * green[i + s][j + t];
+                        new_red += m[s + 2][t + 2] * red[i + s][j + t];
+                    }
+                }
+            }
+
+            blue[i][j] = new_blue/w;
+            green[i][j] = new_green/w;
+            red[i][j] = new_red/w;
+        }
+    }
+}
+void BMP::getRGB()
+{
+    blue.resize(getHeight());
+    red.resize(getHeight());
+    green.resize(getHeight());
+    for(int i = 0; i<getHeight();i++)
+    {
+        blue[i].resize(getWidth());
+        red[i].resize(getWidth());
+        green[i].resize(getWidth());
+        for(int j = 0; j<getWidth(); j++)
+        {
+            blue[i][j] = (int)data[(3 * (i * getWidth() + j))+i];
+            green[i][j] = (int)data[(3 * (i * getWidth() + j) + 1)+i];
+            red[i][j] = (int)data[(3 * (i * getWidth() + j) + 2)+i];
+        }
+    }
+}
+void BMP::setRGB()
+{
+    for(int i = 0; i<getHeight();i++)
+    {
+        for(int j = 0; j<getWidth(); j++)
+        {
+            data[(3 * (i * getWidth() + j)) + i] = blue[i][j];
+            data[(3 * (i * getWidth() + j) + 1) + i] = green[i][j];
+            data[(3 * (i * getWidth() + j) + 2) + i] = red[i][j];
+        }
+    }
+}
