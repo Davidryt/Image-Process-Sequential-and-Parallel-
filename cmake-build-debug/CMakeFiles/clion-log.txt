@@ -1,4 +1,15 @@
 /home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/rober/uni/arch/Arqui2020
 -- Configuring done
 -- Generating done
+-- Build files have been written to: /home/rober/uni/arch/Arqui2020/cmake-build-debug/googletest-download
+[ 11%] Performing update step for 'googletest'
+Current branch master is up to date.
+[ 22%] No configure step for 'googletest'
+[ 33%] No build step for 'googletest'
+[ 44%] No install step for 'googletest'
+[ 55%] No test step for 'googletest'
+[ 66%] Completed 'googletest'
+[100%] Built target googletest
+-- Configuring done
+-- Generating done
 -- Build files have been written to: /home/rober/uni/arch/Arqui2020/cmake-build-debug

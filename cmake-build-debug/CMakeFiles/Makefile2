@@ -73,46 +73,264 @@ CMAKE_BINARY_DIR = /home/rober/uni/arch/Arqui2020/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Arqui2020.dir/all
+all: CMakeFiles/test-bmp.dir/all
+all: test/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: test/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Arqui2020.dir/clean
+clean: CMakeFiles/test-bmp.dir/clean
+clean: test/clean
+clean: googletest-build/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Arqui2020.dir
+# Directory level rules for directory googletest-build
+
+# Recursive "all" directory target.
+googletest-build/all: googletest-build/googlemock/all
+
+.PHONY : googletest-build/all
+
+# Recursive "preinstall" directory target.
+googletest-build/preinstall: googletest-build/googlemock/preinstall
+
+.PHONY : googletest-build/preinstall
+
+# Recursive "clean" directory target.
+googletest-build/clean: googletest-build/googlemock/clean
+
+.PHONY : googletest-build/clean
+
+#=============================================================================
+# Directory level rules for directory googletest-build/googlemock
+
+# Recursive "all" directory target.
+googletest-build/googlemock/all: googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+googletest-build/googlemock/all: googletest-build/googlemock/CMakeFiles/gmock.dir/all
+googletest-build/googlemock/all: googletest-build/googletest/all
+
+.PHONY : googletest-build/googlemock/all
+
+# Recursive "preinstall" directory target.
+googletest-build/googlemock/preinstall: googletest-build/googletest/preinstall
+
+.PHONY : googletest-build/googlemock/preinstall
+
+# Recursive "clean" directory target.
+googletest-build/googlemock/clean: googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+googletest-build/googlemock/clean: googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+googletest-build/googlemock/clean: googletest-build/googletest/clean
+
+.PHONY : googletest-build/googlemock/clean
+
+#=============================================================================
+# Directory level rules for directory googletest-build/googletest
+
+# Recursive "all" directory target.
+googletest-build/googletest/all: googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+googletest-build/googletest/all: googletest-build/googletest/CMakeFiles/gtest.dir/all
+
+.PHONY : googletest-build/googletest/all
+
+# Recursive "preinstall" directory target.
+googletest-build/googletest/preinstall:
+
+.PHONY : googletest-build/googletest/preinstall
+
+# Recursive "clean" directory target.
+googletest-build/googletest/clean: googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+googletest-build/googletest/clean: googletest-build/googletest/CMakeFiles/gtest.dir/clean
+
+.PHONY : googletest-build/googletest/clean
+
+#=============================================================================
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all: test/CMakeFiles/Arqui2020_tst.dir/all
+
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean: test/CMakeFiles/Arqui2020_tst.dir/clean
+
+.PHONY : test/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test-bmp.dir
 
 # All Build rule for target.
-CMakeFiles/Arqui2020.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Arqui2020"
-.PHONY : CMakeFiles/Arqui2020.dir/all
+CMakeFiles/test-bmp.dir/all: googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/test-bmp.dir/all: googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=11,12,13 "Built target test-bmp"
+.PHONY : CMakeFiles/test-bmp.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Arqui2020.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Arqui2020.dir/all
+CMakeFiles/test-bmp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-bmp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Arqui2020.dir/rule
+.PHONY : CMakeFiles/test-bmp.dir/rule
 
 # Convenience name for target.
-Arqui2020: CMakeFiles/Arqui2020.dir/rule
+test-bmp: CMakeFiles/test-bmp.dir/rule
 
-.PHONY : Arqui2020
+.PHONY : test-bmp
 
 # clean rule for target.
-CMakeFiles/Arqui2020.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Arqui2020.dir/build.make CMakeFiles/Arqui2020.dir/clean
-.PHONY : CMakeFiles/Arqui2020.dir/clean
+CMakeFiles/test-bmp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/clean
+.PHONY : CMakeFiles/test-bmp.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/Arqui2020_tst.dir
+
+# All Build rule for target.
+test/CMakeFiles/Arqui2020_tst.dir/all: googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Arqui2020_tst.dir/build.make test/CMakeFiles/Arqui2020_tst.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Arqui2020_tst.dir/build.make test/CMakeFiles/Arqui2020_tst.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Arqui2020_tst"
+.PHONY : test/CMakeFiles/Arqui2020_tst.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/Arqui2020_tst.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/Arqui2020_tst.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
+.PHONY : test/CMakeFiles/Arqui2020_tst.dir/rule
+
+# Convenience name for target.
+Arqui2020_tst: test/CMakeFiles/Arqui2020_tst.dir/rule
+
+.PHONY : Arqui2020_tst
+
+# clean rule for target.
+test/CMakeFiles/Arqui2020_tst.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Arqui2020_tst.dir/build.make test/CMakeFiles/Arqui2020_tst.dir/clean
+.PHONY : test/CMakeFiles/Arqui2020_tst.dir/clean
+
+#=============================================================================
+# Target rules for target googletest-build/googlemock/CMakeFiles/gmock_main.dir
+
+# All Build rule for target.
+googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: googletest-build/googlemock/CMakeFiles/gmock.dir/all
+googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gmock_main"
+.PHONY : googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+
+# Build rule for subdir invocation for target.
+googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
+.PHONY : googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
+
+# Convenience name for target.
+gmock_main: googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
+
+.PHONY : gmock_main
+
+# clean rule for target.
+googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+
+#=============================================================================
+# Target rules for target googletest-build/googlemock/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+googletest-build/googlemock/CMakeFiles/gmock.dir/all: googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target gmock"
+.PHONY : googletest-build/googlemock/CMakeFiles/gmock.dir/all
+
+# Build rule for subdir invocation for target.
+googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest-build/googlemock/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
+.PHONY : googletest-build/googlemock/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: googletest-build/googlemock/CMakeFiles/gmock.dir/rule
+
+.PHONY : gmock
+
+# clean rule for target.
+googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+
+#=============================================================================
+# Target rules for target googletest-build/googletest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+googletest-build/googletest/CMakeFiles/gtest_main.dir/all: googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gtest_main"
+.PHONY : googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+
+# Build rule for subdir invocation for target.
+googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
+.PHONY : googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
+
+.PHONY : gtest_main
+
+# clean rule for target.
+googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+
+#=============================================================================
+# Target rules for target googletest-build/googletest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+googletest-build/googletest/CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest"
+.PHONY : googletest-build/googletest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles 0
+.PHONY : googletest-build/googletest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: googletest-build/googletest/CMakeFiles/gtest.dir/rule
+
+.PHONY : gtest
+
+# clean rule for target.
+googletest-build/googletest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/clean
+.PHONY : googletest-build/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

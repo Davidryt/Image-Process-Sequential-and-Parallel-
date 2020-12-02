@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "Arqui2020.pdb"
   "CMakeFiles/Arqui2020.dir/bmp.cpp.o"
   "CMakeFiles/Arqui2020.dir/main.cpp.o"
+  "CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
