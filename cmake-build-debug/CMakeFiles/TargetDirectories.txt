@@ -1,10 +1,11 @@
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/install/strip.dir
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/install/local.dir
-/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/test-bmp.dir
-/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/install.dir
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/test-bmp.dir
+/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/release.dir
+/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/test/CMakeFiles/install/strip.dir
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/test/CMakeFiles/install/local.dir
 /home/rober/uni/arch/Arqui2020/cmake-build-debug/test/CMakeFiles/Arqui2020_tst.dir

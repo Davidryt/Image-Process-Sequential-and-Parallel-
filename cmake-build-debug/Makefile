@@ -100,28 +100,6 @@ install/local/fast: preinstall/fast
 	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -143,6 +121,28 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -188,6 +188,19 @@ test-bmp: cmake_check_build_system
 test-bmp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/build
 .PHONY : test-bmp/fast
+
+#=============================================================================
+# Target rules for targets named release
+
+# Build rule for target.
+release: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 release
+.PHONY : release
+
+# fast build rule for target.
+release/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/build
+.PHONY : release/fast
 
 #=============================================================================
 # Target rules for targets named Arqui2020_tst
@@ -261,6 +274,7 @@ src/bmp.o: src/bmp.cpp.o
 # target to build an object file
 src/bmp.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/src/bmp.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/src/bmp.cpp.o
 .PHONY : src/bmp.cpp.o
 
 src/bmp.i: src/bmp.cpp.i
@@ -270,6 +284,7 @@ src/bmp.i: src/bmp.cpp.i
 # target to preprocess a source file
 src/bmp.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/src/bmp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/src/bmp.cpp.i
 .PHONY : src/bmp.cpp.i
 
 src/bmp.s: src/bmp.cpp.s
@@ -279,7 +294,35 @@ src/bmp.s: src/bmp.cpp.s
 # target to generate assembly for a file
 src/bmp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-bmp.dir/build.make CMakeFiles/test-bmp.dir/src/bmp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/src/bmp.cpp.s
 .PHONY : src/bmp.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 test/test-bmp.o: test/test-bmp.cpp.o
 
@@ -325,10 +368,14 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... release"
 	@echo "... test-bmp"
 	@echo "... src/bmp.o"
 	@echo "... src/bmp.i"
 	@echo "... src/bmp.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... test/test-bmp.o"
 	@echo "... test/test-bmp.i"
 	@echo "... test/test-bmp.s"

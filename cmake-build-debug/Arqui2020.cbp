@@ -37,6 +37,26 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="install">
+				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="test-bmp">
 				<Option output="/home/rober/uni/arch/Arqui2020/cmake-build-debug/test-bmp" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
@@ -89,11 +109,49 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="release">
+				<Option output="/home/rober/uni/arch/Arqui2020/cmake-build-debug/release" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rober/uni/arch/Arqui2020/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 release"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="release/fast">
+				<Option output="/home/rober/uni/arch/Arqui2020/cmake-build-debug/release" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/rober/uni/arch/Arqui2020/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 release/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -109,21 +167,11 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install">
+			<Target title="edit_cache">
 				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="list_install_components">
-				<Option working_dir="/home/rober/uni/arch/Arqui2020/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rober/uni/arch/Arqui2020/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -412,9 +460,14 @@
 		</Unit>
 		<Unit filename="/home/rober/uni/arch/Arqui2020/src/bmp.cpp">
 			<Option target="test-bmp"/>
+			<Option target="release"/>
 		</Unit>
 		<Unit filename="/home/rober/uni/arch/Arqui2020/src/bmp.h">
 			<Option target="test-bmp"/>
+			<Option target="release"/>
+		</Unit>
+		<Unit filename="/home/rober/uni/arch/Arqui2020/src/main.cpp">
+			<Option target="release"/>
 		</Unit>
 		<Unit filename="/home/rober/uni/arch/Arqui2020/test/test-bmp.cpp">
 			<Option target="test-bmp"/>
