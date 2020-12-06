@@ -12,6 +12,7 @@
 #include <iostream>
 
 #pragma pack(push, 1)   //I HAVE NO IDEA, BUT DELETED AND NOTHING WILL WORK
+
 struct file_head {
     uint16_t file_type{ 0x4D42 };          // File type always BM which is 0x4D42 (stored as hex uint16_t in little endian)
     uint32_t file_size{ 0 };               // Size of the file (in bytes)
@@ -58,6 +59,8 @@ struct BMP {
     int set_pixel();
 
     void gaussBlur();
+    void sobelOperator();
+
     int getWidth() {return bmp_info_header.img_width;}
     int getHeight() {return bmp_info_header.img_height;}
 
@@ -68,5 +71,8 @@ private:
     uint32_t row_stride{ 0 };
 };
 
+
+
 // Head guard end
+
 #endif

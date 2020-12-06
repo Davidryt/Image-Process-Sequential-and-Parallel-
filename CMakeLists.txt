@@ -44,3 +44,5 @@ endif()
 add_executable(test-bmp test/test-bmp.cpp src/bmp.h src/bmp.cpp)
 target_link_libraries(test-bmp gtest gtest_main)
 add_test(NAME bmpIo COMMAND source)
+
+add_executable(release src/main.cpp src/bmp.h src/bmp.cpp)
