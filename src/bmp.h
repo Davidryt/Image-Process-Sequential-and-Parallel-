@@ -59,7 +59,10 @@ struct BMP {
     int set_pixel();
 
     void gaussBlur();
+    void gaussBlurMP();
+
     void sobelOperator();
+    void sobelOperatorMP();
 
     int getWidth() {return bmp_info_header.img_width;}
     int getHeight() {return bmp_info_header.img_height;}

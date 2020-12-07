@@ -126,6 +126,46 @@ void BMP::gaussBlur() {
 
     setRGB();
 }
+void BMP::gaussBlurMP() {
+    getRGB();
+    int m[5][5]{{1, 4,  7,  4,  1},
+                {4, 16, 26, 16, 4},
+                {7, 26, 41, 26, 7},
+                {4, 16, 26, 16, 4},
+                {1, 4,  7,  4,  1}};
+    int w{273};
+    auto blue1 = blue;
+    auto green1 = green;
+    auto red1 = red;
+    int i, j{0};
+    #pragma omp parallel for private(i, j)
+        for (i = 0; i < getHeight(); i++) {
+            for (j = 0; j < getWidth(); j++) {
+                int new_blue{0};
+                int new_green{0};
+                int new_red{0};
+                for (int s = -2; s <= 2; s++) {
+                    for (int t = -2; t <= 2; t++) {
+                        if ((i + s) >= 0 and (j + t) >= 0 and (i + s) < getHeight() and (j + t) < getWidth()) {
+                            new_blue += m[s + 2][t + 2] * blue[i + s][j + t];
+                            new_green += m[s + 2][t + 2] * green[i + s][j + t];
+                            new_red += m[s + 2][t + 2] * red[i + s][j + t];
+                        }
+                    }
+                }
+
+                blue1[i][j] = new_blue / w;
+                green1[i][j] = new_green / w;
+                red1[i][j] = new_red / w;
+            }
+        }
+    blue = blue1;
+    green = green1;
+    red = red1;
+    setRGB();
+}
+
+
 
 void BMP::getRGB() {
     blue.resize(getHeight());
@@ -164,9 +204,9 @@ void BMP::sobelOperator() {
                  {-1, -2, -1}};
 
 
-    /*int my[3][3]{{-1, 0, 1},
+    int my[3][3]{{-1, 0, 1},
                  {-2, 0, 2},
-                 {-1, 0, 1}};*/
+                 {-1, 0, 1}};
 
     int w{8};
 
@@ -189,9 +229,9 @@ void BMP::sobelOperator() {
                         blue_x += mx[s + 1][t + 1] * blue[i + s][j + t];
                         green_x += mx[s + 1][t + 1] * green[i + s][j + t];
                         red_x += mx[s + 1][t + 1] * red[i + s][j + t];
-                        blue_y += mx[s + 1][t + 1] * blue[i + s][j + t];
-                        green_y += mx[s + 1][t + 1] * green[i + s][j + t];
-                        red_y += mx[s + 1][t + 1] * red[i + s][j + t];
+                        blue_y += my[s + 1][t + 1] * blue[i + s][j + t];
+                        green_y += my[s + 1][t + 1] * green[i + s][j + t];
+                        red_y += my[s + 1][t + 1] * red[i + s][j + t];
                     }
                 }
             }
@@ -206,5 +246,57 @@ void BMP::sobelOperator() {
     green = green1;
     red = red1;
 
+    setRGB();
+}
+
+void BMP::sobelOperatorMP()
+{
+    getRGB();
+    int mx[3][3]  {{1,2,1},
+                   {0,0,0},
+                   {-1,-2,-1}};
+
+    int my[3][3]  {{-1,0,1},
+                   {-2,0,2},
+                   {-1,0,1}};
+    int w {8};
+    auto blue1 = blue;
+    auto green1 = green;
+    auto red1 = red;
+    int i, j{0};
+#pragma omp parallel for private(i, j)
+    for(i = 0; i<getHeight();i++)
+    {
+        for(j = 0; j<getWidth(); j++)
+        {
+            int blue_x {0};
+            int green_x {0};
+            int red_x {0};
+            int blue_y {0};
+            int green_y {0};
+            int red_y {0};
+            for (int s = -1; s<=1; s++)
+            {
+                for(int t = -1; t<=1; t++)
+                {
+                    if((i+s)>=0 and (j+t)>=0 and (i+s)<getHeight() and (j+t)<getWidth()) {
+                        blue_x += mx[s + 1][t + 1] * blue[i + s][j + t];
+                        green_x += mx[s + 1][t + 1] * green[i + s][j + t];
+                        red_x += mx[s + 1][t + 1] * red[i + s][j + t];
+                        blue_y += my[s + 1][t + 1] * blue[i + s][j + t];
+                        green_y += my[s + 1][t + 1] * green[i + s][j + t];
+                        red_y += my[s + 1][t + 1] * red[i + s][j + t];
+                    }
+                }
+            }
+
+            blue1[i][j] = (abs(blue_x)+abs(blue_y))/w;
+            green1[i][j] = (abs(green_x)+abs(green_y))/w;
+            red1[i][j] = (abs(red_x)+abs(red_y))/w;
+        }
+    }
+    blue = blue1;
+    green = green1;
+    red = red1;
     setRGB();
 }
