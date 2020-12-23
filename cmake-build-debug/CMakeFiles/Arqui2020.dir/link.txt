@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Arqui2020.dir/main.cpp.o  -o Arqui2020 
+/usr/bin/c++   -std=c++17 -Wall -Wextra -Wno-deprecated -Werror -pedantic -pedantic-errors -g   CMakeFiles/Arqui2020.dir/main.cpp.o CMakeFiles/Arqui2020.dir/bmp.cpp.o CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o  -o Arqui2020 

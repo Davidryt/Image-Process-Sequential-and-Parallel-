@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidryt/Desktop/Arqui2020
+CMAKE_SOURCE_DIR = /home/rober/uni/arch/Arqui2020
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidryt/Desktop/Arqui2020/cmake-build-debug
+CMAKE_BINARY_DIR = /home/rober/uni/arch/Arqui2020/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Arqui2020.dir/depend.make
@@ -79,28 +79,58 @@ include CMakeFiles/Arqui2020.dir/flags.make
 
 CMakeFiles/Arqui2020.dir/main.cpp.o: CMakeFiles/Arqui2020.dir/flags.make
 CMakeFiles/Arqui2020.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Arqui2020.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Arqui2020.dir/main.cpp.o -c /home/davidryt/Desktop/Arqui2020/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Arqui2020.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Arqui2020.dir/main.cpp.o -c /home/rober/uni/arch/Arqui2020/main.cpp
 
 CMakeFiles/Arqui2020.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Arqui2020.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidryt/Desktop/Arqui2020/main.cpp > CMakeFiles/Arqui2020.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rober/uni/arch/Arqui2020/main.cpp > CMakeFiles/Arqui2020.dir/main.cpp.i
 
 CMakeFiles/Arqui2020.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Arqui2020.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidryt/Desktop/Arqui2020/main.cpp -o CMakeFiles/Arqui2020.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rober/uni/arch/Arqui2020/main.cpp -o CMakeFiles/Arqui2020.dir/main.cpp.s
+
+CMakeFiles/Arqui2020.dir/bmp.cpp.o: CMakeFiles/Arqui2020.dir/flags.make
+CMakeFiles/Arqui2020.dir/bmp.cpp.o: ../bmp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Arqui2020.dir/bmp.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Arqui2020.dir/bmp.cpp.o -c /home/rober/uni/arch/Arqui2020/bmp.cpp
+
+CMakeFiles/Arqui2020.dir/bmp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Arqui2020.dir/bmp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rober/uni/arch/Arqui2020/bmp.cpp > CMakeFiles/Arqui2020.dir/bmp.cpp.i
+
+CMakeFiles/Arqui2020.dir/bmp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Arqui2020.dir/bmp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rober/uni/arch/Arqui2020/bmp.cpp -o CMakeFiles/Arqui2020.dir/bmp.cpp.s
+
+CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o: CMakeFiles/Arqui2020.dir/flags.make
+CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o: ../test/test-bmp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o -c /home/rober/uni/arch/Arqui2020/test/test-bmp.cpp
+
+CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rober/uni/arch/Arqui2020/test/test-bmp.cpp > CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.i
+
+CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rober/uni/arch/Arqui2020/test/test-bmp.cpp -o CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.s
 
 # Object files for target Arqui2020
 Arqui2020_OBJECTS = \
-"CMakeFiles/Arqui2020.dir/main.cpp.o"
+"CMakeFiles/Arqui2020.dir/main.cpp.o" \
+"CMakeFiles/Arqui2020.dir/bmp.cpp.o" \
+"CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o"
 
 # External object files for target Arqui2020
 Arqui2020_EXTERNAL_OBJECTS =
 
 Arqui2020: CMakeFiles/Arqui2020.dir/main.cpp.o
+Arqui2020: CMakeFiles/Arqui2020.dir/bmp.cpp.o
+Arqui2020: CMakeFiles/Arqui2020.dir/test/test-bmp.cpp.o
 Arqui2020: CMakeFiles/Arqui2020.dir/build.make
 Arqui2020: CMakeFiles/Arqui2020.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Arqui2020"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Arqui2020"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Arqui2020.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -113,6 +143,6 @@ CMakeFiles/Arqui2020.dir/clean:
 .PHONY : CMakeFiles/Arqui2020.dir/clean
 
 CMakeFiles/Arqui2020.dir/depend:
-	cd /home/davidryt/Desktop/Arqui2020/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidryt/Desktop/Arqui2020 /home/davidryt/Desktop/Arqui2020 /home/davidryt/Desktop/Arqui2020/cmake-build-debug /home/davidryt/Desktop/Arqui2020/cmake-build-debug /home/davidryt/Desktop/Arqui2020/cmake-build-debug/CMakeFiles/Arqui2020.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rober/uni/arch/Arqui2020/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rober/uni/arch/Arqui2020 /home/rober/uni/arch/Arqui2020 /home/rober/uni/arch/Arqui2020/cmake-build-debug /home/rober/uni/arch/Arqui2020/cmake-build-debug /home/rober/uni/arch/Arqui2020/cmake-build-debug/CMakeFiles/Arqui2020.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Arqui2020.dir/depend
 

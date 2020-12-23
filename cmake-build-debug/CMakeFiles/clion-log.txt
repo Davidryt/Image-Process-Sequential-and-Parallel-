@@ -1,4 +1,23 @@
-/home/davidryt/Desktop/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/davidryt/Desktop/Arqui2020
+/home/rober/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/rober/uni/arch/Arqui2020
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/davidryt/Desktop/Arqui2020/cmake-build-debug
+-- Build files have been written to: /home/rober/uni/arch/Arqui2020/cmake-build-debug/googletest-download
+[ 11%] Performing update step for 'googletest'
+From https://github.com/google/googletest
+   b1fbd33c..93748a94  master     -> origin/master
+ * [new branch]        55D738F21B43817B90A22896859CDC6A -> origin/55D738F21B43817B90A22896859CDC6A
+ * [new branch]        A627ACB8099CDA45D819C3AF25C74709 -> origin/A627ACB8099CDA45D819C3AF25C74709
+ * [new branch]        E407F9616669E7EFE7B52726DC0C1039 -> origin/E407F9616669E7EFE7B52726DC0C1039
+ + 946a8cb1...db150ebe E5E9B92DC71B262387A82177344D43FD -> origin/E5E9B92DC71B262387A82177344D43FD  (forced update)
+ * [new branch]        FE2774773A77F1D7EA51AFAD32EA53C9 -> origin/FE2774773A77F1D7EA51AFAD32EA53C9
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to origin/master.
+[ 22%] No configure step for 'googletest'
+[ 33%] No build step for 'googletest'
+[ 44%] No install step for 'googletest'
+[ 55%] No test step for 'googletest'
+[ 66%] Completed 'googletest'
+[100%] Built target googletest
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rober/uni/arch/Arqui2020/cmake-build-debug
