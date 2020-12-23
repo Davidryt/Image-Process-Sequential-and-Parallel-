@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -std=c++17 -Wall -Wextra -Wno-deprecated -Werror -pedantic -pedantic-errors -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Arqui2020_tst.dir/test-bmp.cpp.o  -o Arqui2020_tst  -lArqui2020_lib ../lib/libgtestd.a 
