@@ -84,9 +84,23 @@ struct BMP {
             //Everyone does this on the web, dunno why is 8 yet
             data.resize(bmp_info_header.img_width * bmp_info_header.img_height * bmp_info_header.img_point / 8);
             //we read the data etc and fill the size
+            
+            if (bmp_info_header.img_width % 4 == 0) {
+            
             cursor.read((char*)data.data(), data.size());
             file_header.file_size += static_cast<uint32_t>(data.size());
+	 }
+            else {
+                row_stride = bmp_info_header.width * bmp_info_header.bit_count / 8;
+                uint32_t new_stride = make_stride_aligned(4);
+                std::vector<uint8_t> padding_row(new_stride - row_stride);
 
+                for (int y = 0; y < bmp_info_header.height; ++y) {
+                    inp.read((char*)(data.data() + row_stride * y), row_stride);
+                    inp.read((char*)padding_row.data(), padding_row.size());
+                }
+                file_header.file_size += static_cast<uint32_t>(data.size()) + bmp_info_header.height * static_cast<uint32_t>(padding_row.size());
+            }
 
         }
         else {
